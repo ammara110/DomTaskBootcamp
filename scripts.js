@@ -20,7 +20,7 @@ form.addEventListener("submit", handleSubmit);
 function handleSubmit(e) {
   e.preventDefault();
   
-  console.log("Form submitted!");
+  document.write("Form submitted!");
 }
 
 // Task 5 
@@ -35,7 +35,7 @@ function addTodo(e) {
   const todo = document.createElement("div");
   todo.classList.add("todo");
   
-  todo.innerText = "New todo";
+  todo.innerText = "New Task created";
   
   todo.addEventListener("click", () => {
     todo.remove(); 
