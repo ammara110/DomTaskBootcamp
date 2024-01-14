@@ -13,33 +13,46 @@ function createElement() {
 const list = document.getElementById("task3");
 list.querySelectorAll("li").forEach(li => li.remove());
 
+
 // Task 4
 const form = document.getElementById("task4");
-form.addEventListener("submit", handleSubmit); 
+const input = form.querySelector("input"); 
+
+form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(e) {
   e.preventDefault();
-  
-  document.write("Form submitted!");
+
+  const value = input.value;
+
+  document.write(`Form submitted with input: ${value}`);
 }
 
 // Task 5 
+// Task 5
 const form2 = document.getElementById("task5");
+const input2 = form2.querySelector("input");
 const todoList = document.getElementById("todos");
 
-form2.addEventListener("submit", addTodo);
+form2.addEventListener("submit", addTodo); 
 
 function addTodo(e) {
   e.preventDefault();
-  
+
+  const value = input2.value;
+
   const todo = document.createElement("div");
   todo.classList.add("todo");
-  
-  todo.innerText = "New Task created";
-  
+
+  // Set todo text to input value
+  todo.innerText = value; 
+
   todo.addEventListener("click", () => {
-    todo.remove(); 
+    todo.remove();
   });
-  
+
+  // Clear input
+  input2.value = '';
+
   todoList.appendChild(todo);
 }
